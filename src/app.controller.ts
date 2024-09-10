@@ -11,4 +11,12 @@ export class AppController {
   getProfile(@Request() req) {
     return req.user;
   }
+
+  @Get('health')
+  healthCheck() {
+    return {
+      status: 'ok',
+      timestamp: new Date().toISOString(),
+    };
+  }
 }
