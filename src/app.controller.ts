@@ -9,6 +9,6 @@ export class AppController {
   @UseGuards(JwtAuthGuard)
   @Get('protected')
   getProfile(@Request() req) {
-    return this.appService.getProfile(req.user);
+    return req.user;
   }
 }
